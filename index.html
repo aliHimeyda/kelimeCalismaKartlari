@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Kelime Kartları</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app">
+      <header class="header">
+        <span id="counter">0 / 0</span>
+      </header>
+
+      <main class="stage">
+        <button class="arrow" id="prevBtn" aria-label="Önceki kelime">
+          &#8249;
+        </button>
+
+        <div
+          class="card"
+          id="card"
+          role="button"
+          tabindex="0"
+          aria-label="Kartı çevir"
+        >
+          <div class="card-inner">
+            <div class="card-face card-front">
+              <p class="word" id="word"></p>
+            </div>
+            <div class="card-face card-back">
+              <p class="translate" id="translate"></p>
+              <p class="sentence" id="sentence"></p>
+            </div>
+          </div>
+        </div>
+
+        <button class="arrow" id="nextBtn" aria-label="Sonraki kelime">
+          &#8250;
+        </button>
+      </main>
+
+      <footer class="footer">
+        <button class="mode-btn" id="modeBtn">Grammer Soruları</button>
+      </footer>
+    </div>
+
+    <script src="words.js"></script>
+    <script src="grammer.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

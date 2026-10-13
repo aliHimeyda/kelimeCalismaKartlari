@@ -1,0 +1,180 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: #fff;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Telefon görünümü: geniş ekranda da telefon genişliğinde kalır */
+.app {
+  max-width: 430px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #000;
+  border-right: 1px solid #000;
+}
+
+.header {
+  padding: 16px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #000;
+}
+
+.stage {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 8px;
+}
+
+.arrow {
+  flex: 0 0 40px;
+  height: 40px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  background: #fff;
+  color: #000;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 4px;
+}
+
+.arrow:active {
+  background: #000;
+  color: #fff;
+}
+
+.card {
+  flex: 1;
+  height: 60vh;
+  max-height: 460px;
+  perspective: 1000px;
+  cursor: pointer;
+  outline: none;
+  user-select: none;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card.no-anim .card-inner {
+  transition: none;
+}
+
+.card-face {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 20px;
+  text-align: center;
+  border: 2px solid #000;
+  border-radius: 16px;
+  background: #fff;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.word {
+  font-size: 32px;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.translate {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.sentence {
+  font-size: 17px;
+  line-height: 1.5;
+  font-style: italic;
+  padding-top: 20px;
+  border-top: 1px solid #000;
+}
+
+.word,
+.translate,
+.sentence {
+  white-space: pre-line;
+}
+
+/* Grammer modu: uzun metinler için daha küçük yazı */
+.card.grammar .card-face {
+  overflow-y: auto;
+  justify-content: safe center;
+}
+
+.card.grammar .word {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+.card.grammar .translate {
+  font-size: 20px;
+}
+
+.card.grammar .sentence {
+  font-size: 16px;
+  font-style: normal;
+}
+
+.footer {
+  padding: 0 16px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.mode-btn {
+  width: 100%;
+  max-width: 280px;
+  padding: 14px;
+  border: 2px solid #000;
+  border-radius: 12px;
+  background: #fff;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mode-btn:active {
+  background: #000;
+  color: #fff;
+}
